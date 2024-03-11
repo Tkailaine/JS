@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de passos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div id="titulo">Vamos Contar</div>
+
+    </header>
+
+    <section>
+            
+            <div class="inicio espaçamento">
+                <label for="Inicio">Inicio</label>
+                <input type="number" name="txtinicio" id="txtinicio" min="0">
+            </div>
+        
+        
+            <div class="fim espaçamento">
+                <label for="Fim">Fim</label>
+                <input type="number" name="txtfim" id="txtfim">
+            </div>
+        
+            <div class="passo espaçamento">
+                <label for="Passo">Passo</label>
+                <input type="number" name="txtpasso" id="txtpasso">
+            </div>
+        
+        <div class="verificador espaçamento">
+            <button onclick="verificar()">Verificar</button>
+        </div>
+        
+        <div id="res"></div>
+    </section>
+
+    <footer>
+        <p>&copy;Thaissa.Kailaine</p>
+    </footer>
+
+    <script src="javascript.js"></script>
+    
+</body>
+</html>

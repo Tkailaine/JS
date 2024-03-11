@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+body{
+ background-color: #7ccaf8;
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
+ font-size: 20px;
+}
+.espaçamento{
+    padding-top: 15px;
+}
+header{
+    font: bolder 2em 'Verdana', sans-serif;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+section{
+    background: white;
+    width: 500px;
+    margin: auto;
+    border-radius: 15px;
+    padding-left: 25px;
+    
+
+}
+
+
+div.ano > input#txtano{
+    width: 150px;
+    
+}
+
+
+div.verificador > input#idverificador:hover{
+    background-color: rgb(78, 212, 212);
+    color: white;
+    border:none;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.151);
+}
+
+div.texto{
+    padding-top: 25px;
+    
+
+}
+
+
+footer{
+    font-style: italic;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}

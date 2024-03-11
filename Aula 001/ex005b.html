@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade Brasileira</title>
+</head>
+<body>
+    <h1>Digite seu país:</h1>
+    <input type="text" name="paistxt" id="paistxt">
+    <button type="submit" onclick="clicar()">Verificar</button>
+    <div id="res"></div>
+
+    <script>
+        var pais_txt = window.document.getElementById("paistxt")
+        var res = window.document.getElementById("res")
+        function clicar(){
+            if(pais_txt.value=="Brasil" || pais_txt.value=="brasil"){
+                res.innerHTML="Você é <strong>Brasileiro!</strong>"
+                
+            } else{
+                res.innerHTML="Você é <strong>estrangeiro</strong>"
+            }
+        }
+
+    </script>
+
+</body>
+</html>

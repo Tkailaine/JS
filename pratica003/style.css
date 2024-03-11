@@ -1,0 +1,63 @@
+
+
+.espaçamento{
+    padding: 15px;
+}
+
+body{
+    background: rgba(0, 217, 255, 0.486);
+    color: white;
+    font-size: 20px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+header{
+    font-size: 2em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 800;
+    text-align: center;
+    padding: 25px;
+    
+
+}
+
+header > div#titulo{
+    text-shadow: 8px 10px 12px rgba(0, 0, 0, 0.336);
+}
+
+section{
+    background: white;
+    width: 300px;
+    margin: auto;
+    color: black;
+    border-radius: 15px;
+   
+
+}
+
+section > div.inicio > input#txtinicio{
+    width: 100px;
+
+}
+
+section > div.fim > input#txtfim{
+    width: 115px;
+    
+    
+}
+
+section > div.passo> input#txtpasso{
+    width: 100px;
+
+}
+
+section > div#res{
+    text-align: justify;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding: 10px;
+}
+footer{
+text-align: center;
+font-style: italic;
+}

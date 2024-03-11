@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+*{
+    margin: 15px;
+}
+
+
+body{
+ background-color: #7ccaf8;
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
+ font-size: 17px;
+}
+
+
+header{
+    font: normal 1em 'Verdana', sans-serif;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+section{
+    background: white;
+    width: 500px;
+    margin: auto;
+    border-radius: 15px;
+    padding: 10px;
+    
+
+}
+
+section input{
+    width: 100px;
+}
+
+select{
+    width: 220px;
+    margin: 0px 0px 0px 30px;
+}
+
+
+#finalizar{
+    margin: 0px 0px 0px 30px;
+}
+
+footer{
+    font-style: italic;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
