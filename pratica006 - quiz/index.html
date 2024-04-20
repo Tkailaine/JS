@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Idade</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        Qual café é a sua cara?
+    </header>
+    <section class="espaçamento">
+        <div class="pergunta1 layout">
+            <p>Como você prefere o aroma do seu café?</p>
+            <label for="intenso-doce">Intenso e doce</label>
+            <input type="radio" name="aroma" id="intenso-doce" checked>
+            <label for="fresco-refrescante">Fresco e refrescante</label>
+            <input type="radio" name="aroma" id="fresco-refrescante">
+            <label for="suave-amadeirado">Suave e amadeirado</label>
+            <input type="radio" name="aroma" id="suave-amadeirado">
+        </div>
+
+        <div class="pergunta2 layout">
+            <p>Se você pudesse escolher uma fragrância para sua vela aromática, o que seria?</p>
+            <label for="caramelo-baunilha">Caramelo e baunilha</label>
+            <input type="radio" name="vela" id="caramelo-baunilha" checked>
+            <label for="hortelã-eucalipto">Hortelã e eucalipto</label>
+            <input type="radio" name="vela" id="hortelã-eucalipto">
+            <label for="avelã e canela">Avelã e canela</label>
+            <input type="radio" name="vela" id="avelã e canela">
+        </div>
+
+        <div class="pergunta3 layout">
+            <p>Qual é o seu tipo de chocolate preferido?</p>
+            <label for="chocolate-leite">Chocolate ao leite</label>
+            <input type="radio" name="chocolate" id="chocolate-leite" checked>
+            <label for="chocolate-meio-amargo">Chocolate meio amargo</label>
+            <input type="radio" name="chocolate" id="chocolate-meio-amargo">
+            <label for="chocolate-branco">Chocolate branco</label>
+            <input type="radio" name="chocolate" id="chocolate-branco">
+        </div>
+
+        <div class="pergunta4 layout">
+            <p>Qual é a sua estação do ano favorita?</p>
+            <label for="estacao-outono">Outono, quando as folhas caem e o clima começa a esfriar</label>
+            <input type="radio" name="estacao" id="estacao-outono" checked>
+            <label for="estacao-verao">Verão, quando o sol brilha forte e o clima é quente</label>
+            <input type="radio" name="estacao" id="estacao-verao">
+            <label for="estacao-primavera">Primavera, quando as flores começam a desabrochar e o ar é fresco</label>
+            <input type="radio" name="estacao" id="estacao-primavera">
+        </div>
+
+
+        <div class="pergunta5 layout">
+            <p>Qual é a sua atividade de lazer preferida?</p>
+            <label for="livro">Ler um livro enquanto toma um café
+            </label>
+            <input type="radio" name="lazer" id="livro" checked>
+            <label for="passeio">Dar um passeio ao ar livre e apreciar a natureza
+            </label>
+            <input type="radio" name="lazer" id="passeio">
+            <label for="cozinhar">Cozinhar e experimentar novas receitas
+            </label>
+            <input type="radio" name="lazer" id="cozinhar">
+        </div>
+
+        <div class="texto">
+            <p></p>
+        </div>
+        <input type="button" value="Resultado" onclick="verificar()">
+    </section>
+
+    <footer>
+        &copy;Thaissa.kailaine
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
