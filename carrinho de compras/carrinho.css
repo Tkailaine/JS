@@ -1,0 +1,36 @@
+@charset "UTF-8";
+#carrinho-icon {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  
+  #carrinho-icon img {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+  }
+  
+  #carrinho-lateral {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Posição inicial completamente fora da tela */
+    width: 300px;
+    height: 100%;
+    background-color: #f0f0f0;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    transition: right 0.3s ease-in-out;
+  }
+  
+  #fechar-carrinho {
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  #produtos {
+    margin-top: 50px; /* Para evitar que os produtos sejam ocultados sob o carrinho */
+  }

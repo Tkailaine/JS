@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./estilos/carrinho.css">
+    <title>meu carrinho</title>
+</head>
+<body>
+    <!-- Título do carrinho -->
+  <h1>Meu Carrinho de Compras</h1>
+
+  <div id="carrinho-icon">
+    <img src="caminho/para/icon-carrinho.png" alt="Carrinho de Compras">
+    <span id="contador-carrinho">0</span>
+  </div>
+
+  <!-- Carrinho lateral -->
+  <div id="carrinho-lateral">
+    <div id="fechar-carrinho">Fechar</div>
+    <h2>Meu Carrinho</h2>
+    <ul id="lista-itens-carrinho">
+      <!-- Itens do carrinho serão adicionados aqui -->
+    </ul>
+    <p>Total: R$ <span id="total-carrinho">0.00</span></p>
+  </div>
+    
+
+  <!-- Produtos disponíveis -->
+  <div id="produtos">
+    <h2>Produtos Disponíveis</h2>
+    <ul>
+      <!-- Lista de produtos com botões "Adicionar ao Carrinho" -->
+      <li data-nome="Item 1" data-preco="10.00" data-imagem="caminho/para/imagem1.jpg">Item 1 - R$10.00 <button class="adicionar-ao-carrinho">Adicionar ao Carrinho</button></li>
+      <li data-nome="Item 2" data-preco="20.00" data-imagem="caminho/para/imagem2.jpg">Item 2 - R$20.00 <button class="adicionar-ao-carrinho">Adicionar ao Carrinho</button></li>
+      <li data-nome="Item 3" data-preco="15.00" data-imagem="caminho/para/imagem3.jpg">Item 3 - R$15.00 <button class="adicionar-ao-carrinho">Adicionar ao Carrinho</button></li>
+    </ul>
+  </div>
+  </div>
+
+  <script>
+   document.addEventListener('DOMContentLoaded', function () {
+  const carrinhoIcon = document.getElementById('carrinho-icon');
+  const carrinhoLateral = document.getElementById('carrinho-lateral');
+  const fecharCarrinho = document.getElementById('fechar-carrinho');
+  const contadorCarrinho = document.getElementById('contador-carrinho');
+  const listaItensCarrinho = document.getElementById('lista-itens-carrinho');
+  const totalCarrinho = document.getElementById('total-carrinho');
+
+  let quantidadeItensCarrinho = 0;
+  let valorTotalCarrinho = 0;
+
+  carrinhoIcon.addEventListener('click', () => {
+    carrinhoLateral.style.right = carrinhoLateral.style.right === '0px' ? '-100%' : '0px';
+  });
+
+  fecharCarrinho.addEventListener('click', () => {
+    carrinhoLateral.style.right = '-100%';
+  });
+
+  function adicionarItemCarrinho(nome, preco, imagem) {
+    const novoItem = document.createElement('li');
+    novoItem.classList.add('item-carrinho');
+    novoItem.innerHTML = `
+      <img src="${imagem}" alt="${nome}" width="50">
+      <span>${nome} - R$${preco.toFixed(2)}</span>
+      <button class="remover-do-carrinho">Remover</button>
+    `;
+    listaItensCarrinho.appendChild(novoItem);
+
+    quantidadeItensCarrinho++;
+    valorTotalCarrinho += preco;
+    contadorCarrinho.textContent = quantidadeItensCarrinho;
+    totalCarrinho.textContent = valorTotalCarrinho.toFixed(2);
+
+    // Adiciona um ouvinte de evento ao botão de remover para remover o item do carrinho
+    novoItem.querySelector('.remover-do-carrinho').addEventListener('click', () => {
+      listaItensCarrinho.removeChild(novoItem); // Remove o item da lista de itens do carrinho
+      quantidadeItensCarrinho--;
+      valorTotalCarrinho -= preco;
+      contadorCarrinho.textContent = quantidadeItensCarrinho;
+      totalCarrinho.textContent = valorTotalCarrinho.toFixed(2);
+    });
+  }
+
+  document.querySelectorAll('.adicionar-ao-carrinho').forEach(botao => {
+    botao.addEventListener('click', () => {
+      const item = botao.parentNode;
+      const nome = item.getAttribute('data-nome');
+      const preco = parseFloat(item.getAttribute('data-preco'));
+      const imagem = item.getAttribute('data-imagem');
+      adicionarItemCarrinho(nome, preco, imagem);
+    });
+  });
+});
+  </script>
+    
+</body>
+</html>
