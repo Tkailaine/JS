@@ -18,6 +18,14 @@ const duracaoFoco = 1500;
 const duracaoDescansoCurto = 300; 
 const duracaoDescansoLongo = 900; 
 
+//Musica
+const musicaInput = document.querySelector('#alternar-musica')
+const musica = new Audio('sons/luna-rise-part-one.mp3')
+musica.loop = true
+
+musicaInput.addEventListener('change', () => ( musica.paused ? musica.play() : musica.pause()
+))
+
 const frases = [
     {
         modo : 'foco',
