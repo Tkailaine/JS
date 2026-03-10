@@ -5,7 +5,7 @@ const botoesContexto = document.querySelectorAll('.app__card-button')
 const focoBtn = document.querySelector('.app__card-button--foco')
 const curtoBtn = document.querySelector('.app__card-button--curto')
 const longoBtn = document.querySelector('.app__card-button--longo')
-const botaoIniciar = document.querySelector('.app__card-primary-button');
+
 
 //Temporizador
 const temporizador = document.querySelector('#timer')
@@ -15,7 +15,9 @@ const imagemHero = document.querySelector('.app__image')
 const tituloHero = document.querySelector('.app__title')
 //Botao Temporizador
 const botaoTemporizador = document.querySelector('#start-pause')
-//Tempo na tela
+const botaoIniciarPausar = document.querySelector('#start-pause span')
+const iconePlayPause = document.querySelector('.app__card-primary-butto-icon')
+
 
 //Tempo temporizador de cada modo
 const duracaoFoco = 1500; 
@@ -108,14 +110,19 @@ botaoTemporizador.addEventListener('click', () => iniciarOuPausar())
 
 //setInterval realiza um intervalo de milisegundos para realizar uma função
 function iniciarOuPausar(){
+
     if(intervaloID){
         zerar()
+        botaoIniciarPausar.textContent = 'Começar'
+        iconePlayPause.setAttribute('src', 'imagens/play_arrow.png')
         return
     }
     intervaloID = setInterval(contagemRegressiva, 1000)
-    somPlay.play()
+    somPlay.play()    
+    botaoIniciarPausar.textContent = 'Pausar'
+    iconePlayPause.setAttribute('src', 'imagens/pause.png')
+    }
 
-}
 
 function zerar(){
     clearInterval(intervaloID)
