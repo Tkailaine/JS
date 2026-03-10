@@ -6,22 +6,31 @@ const focoBtn = document.querySelector('.app__card-button--foco')
 const curtoBtn = document.querySelector('.app__card-button--curto')
 const longoBtn = document.querySelector('.app__card-button--longo')
 const botaoIniciar = document.querySelector('.app__card-primary-button');
+
 //Temporizador
 const temporizador = document.querySelector('#timer')
 //Imagem da página
 const imagemHero = document.querySelector('.app__image')
 //Título principal
 const tituloHero = document.querySelector('.app__title')
+//Botao Temporizador
+const botaoTemporizador = documento.querySelector('#start-pause')
 
 //Tempo temporizador de cada modo
 const duracaoFoco = 1500; 
 const duracaoDescansoCurto = 300; 
 const duracaoDescansoLongo = 900; 
+let tempoDecorridoEmSegundos = 5;
+let intervaloID = null;
+
 
 //Musica
 const musicaInput = document.querySelector('#alternar-musica')
 const musica = new Audio('sons/luna-rise-part-one.mp3')
+//const musica = new Audio('sons/piseiro.mp3')
 musica.loop = true
+//define onde começar o audio
+musica.currentTime = 60;
 
 musicaInput.addEventListener('change', () => ( musica.paused ? musica.play() : musica.pause()
 ))
@@ -81,6 +90,27 @@ function alterarTitulo(lista,index){
             </strong>
         </h1>`
 
-
 }
 
+
+const contagemRegressiva = () => {
+    if(tempoDecorridoEmSegundos <= 0){
+        zerar()
+    }
+    tempoDecorridoEmSegundos -= 1
+}
+
+botaoTemporizador.addEventListener('click', () => iniciarOuPausar)
+
+//setInterval realiza um intervalo de milisegundos para realizar uma função
+function iniciarOuPausar(){
+    if(intervaloID){
+        zerar()
+        return
+    }
+    intervaloID = setInterval(contagemRegressiva, 1000)
+}
+function zerar(){
+    clearInterval(intervaloID)
+    intervaloID = null
+}
