@@ -14,7 +14,8 @@ const imagemHero = document.querySelector('.app__image')
 //Título principal
 const tituloHero = document.querySelector('.app__title')
 //Botao Temporizador
-const botaoTemporizador = documento.querySelector('#start-pause')
+const botaoTemporizador = document.querySelector('#start-pause')
+//Tempo na tela
 
 //Tempo temporizador de cada modo
 const duracaoFoco = 1500; 
@@ -27,6 +28,8 @@ let intervaloID = null;
 //Musica
 const musicaInput = document.querySelector('#alternar-musica')
 const musica = new Audio('sons/luna-rise-part-one.mp3')
+const somPlay = new Audio('sons/play.wav')
+
 //const musica = new Audio('sons/piseiro.mp3')
 musica.loop = true
 //define onde começar o audio
@@ -96,11 +99,12 @@ function alterarTitulo(lista,index){
 const contagemRegressiva = () => {
     if(tempoDecorridoEmSegundos <= 0){
         zerar()
+        return
     }
     tempoDecorridoEmSegundos -= 1
 }
 
-botaoTemporizador.addEventListener('click', () => iniciarOuPausar)
+botaoTemporizador.addEventListener('click', () => iniciarOuPausar())
 
 //setInterval realiza um intervalo de milisegundos para realizar uma função
 function iniciarOuPausar(){
@@ -109,8 +113,17 @@ function iniciarOuPausar(){
         return
     }
     intervaloID = setInterval(contagemRegressiva, 1000)
+    somPlay.play()
+
 }
+
 function zerar(){
     clearInterval(intervaloID)
     intervaloID = null
+}
+
+function exibirTemporizador(){
+    if(tempoDecorridoEmSegundos >= 0){
+
+    }
 }
