@@ -5,7 +5,13 @@ const botoesContexto = document.querySelectorAll('.app__card-button')
 const focoBtn = document.querySelector('.app__card-button--foco')
 const curtoBtn = document.querySelector('.app__card-button--curto')
 const longoBtn = document.querySelector('.app__card-button--longo')
+const btnConfiguracoes = document.querySelector('#btn__configuracoes')
 
+//Configuracoes
+const configuracoes = document.querySelector('#configuracoes')
+let exibindoConfiguracoes = false;
+const timeConfiguracao = document.querySelector('#timeConfiguracao')
+const btnSalvarTempo = document.querySelector('#btnSalvarTempo')
 
 //Temporizador
 const tempoTela = document.querySelector('#timer')
@@ -20,9 +26,6 @@ const iconePlayPause = document.querySelector('.app__card-primary-butto-icon')
 
 
 //Tempo temporizador de cada modo
-const duracaoFoco = 1500; 
-const duracaoDescansoCurto = 300; 
-const duracaoDescansoLongo = 900; 
 let tempoDecorridoEmSegundos = 1500;
 let intervaloID = null;
 
@@ -102,6 +105,18 @@ function alterarTitulo(lista,index){
 }
 
 
+btnConfiguracoes.addEventListener('click', () => {
+    if(!exibindoConfiguracoes){
+         configuracoes.classList.add('active')
+         exibindoConfiguracoes = true
+    }else{
+        configuracoes.classList.remove('active')
+        exibindoConfiguracoes = false
+    }
+    })
+
+
+
 const contagemRegressiva = () => {
     if(tempoDecorridoEmSegundos <= 0){
         zerar()
@@ -140,5 +155,16 @@ function exibirTempo(){
     tempoTela.innerHTML = `${tempoFormatado}` 
     
 }
+btnSalvarTempo.addEventListener('click', (event) => {
+    event.preventDefault()
+    tempoDecorridoEmSegundos = parseInt(timeConfiguracao.value) * 60
+    if(isNaN(tempoDecorridoEmSegundos)  || tempoDecorridoEmSegundos < 0){
+        alert('Digite um tempo válido em minutos')
+        return
+    }
+    exibirTempo()
+    
+})
+
 
 exibirTempo()
