@@ -12,6 +12,7 @@ const configuracoes = document.querySelector('#configuracoes')
 let exibindoConfiguracoes = false;
 const timeConfiguracao = document.querySelector('#timeConfiguracao')
 const btnSalvarTempo = document.querySelector('#btnSalvarTempo')
+const setaBtnConfiguracoes = document.querySelector('.seta')
 
 //Temporizador
 const tempoTela = document.querySelector('#timer')
@@ -104,19 +105,6 @@ function alterarTitulo(lista,index){
 
 }
 
-
-btnConfiguracoes.addEventListener('click', () => {
-    if(!exibindoConfiguracoes){
-         configuracoes.classList.add('active')
-         exibindoConfiguracoes = true
-    }else{
-        configuracoes.classList.remove('active')
-        exibindoConfiguracoes = false
-    }
-    })
-
-
-
 const contagemRegressiva = () => {
     if(tempoDecorridoEmSegundos <= 0){
         zerar()
@@ -155,6 +143,20 @@ function exibirTempo(){
     tempoTela.innerHTML = `${tempoFormatado}` 
     
 }
+
+btnConfiguracoes.addEventListener('click', () => {
+    if(!exibindoConfiguracoes){
+         configuracoes.classList.add('active')
+         setaBtnConfiguracoes.classList.add('rotacionada')   
+         exibindoConfiguracoes = true
+    }else{
+        configuracoes.classList.remove('active')
+        setaBtnConfiguracoes.classList.remove('rotacionada')
+        exibindoConfiguracoes = false
+    }
+    })
+
+//alterando tempo alternativo
 btnSalvarTempo.addEventListener('click', (event) => {
     event.preventDefault()
     tempoDecorridoEmSegundos = parseInt(timeConfiguracao.value) * 60

@@ -50,13 +50,8 @@
                     </li>
                 </ul>
                 <div id="timer" class="app__card-timer"></div> 
-                <button id="btn__configuracoes">Configurações</button>
-                <div id="configuracoes__div">
-                    <form id="configuracoes">
-                    <input type="number" placeholder="Tempo (minutos)" min="1" id="timeConfiguracao" ></label>
-                    <button id="btnSalvarTempo">Salvar tempo</button>
-                    </form>
-                </div>
+               
+               
                 <ul class="app__card-list">
                     <li class="app__card-list-item">
                         <label class="toggle">
@@ -69,12 +64,22 @@
                             Música
                         </label>
                     </li>
-                </ul>
+                </ul> 
+              
                 <div class="app__card-primary-button-wrapper">
                     <button id="start-pause" class="app__card-primary-button">
                         <img class="app__card-primary-butto-icon" src="imagens/play_arrow.png" alt="">
                         <span>Começar</span>
                     </button>
+                </div>  
+
+                <!--Configurações de tempo alternativo-->
+                <div id="configuracoes__div"> 
+                    <button id="btn__configuracoes">Configurações   <span class="seta">▼</span></button>
+                    <form id="configuracoes">
+                    <input type="number" placeholder="Tempo (minutos)" min="1" id="timeConfiguracao" ></label>
+                    <button id="btnSalvarTempo">Salvar tempo</button>
+                    </form>
                 </div>
             </div>
         </section>
