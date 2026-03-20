@@ -263,12 +263,26 @@ h2, h3 {
   right: 16px;
 }
 
+.botao-editar{
+  right: 70px;
+
+}
+
+.botao-excluir{
+
+  right: 30px;
+ 
+}
 .botao-editar, .botao-excluir {
+ position: absolute;
+
+  bottom: 40px;
   background: none;
   border: none;
   cursor: pointer;
   padding: 8px;
   margin-left: 8px;
+  width: 20px;
 }
 
 .botao-editar img, .botao-excluir img {
